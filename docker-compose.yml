@@ -12,3 +12,9 @@ services:
       - GIGACHAT_CREDENTIALS=NmUzNDQyNGUtMzY5MC00YzJlLTkyYzAtNWRiMWYzZjgzMWNiOjU4OTgwMzk1LTJkZjItNGY0YS05NTZmLTlmYzhkMzU2YjJkMw==
     volumes:
       - ./.env:/app/.env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8006/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

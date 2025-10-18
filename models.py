@@ -8,4 +8,9 @@ class ExtractRequest(BaseModel):
 
 class ObjectQuestionRequest(BaseModel):
     object_id: str
+    token: str
     question: str
+
+class ObjectInfoRequest(BaseModel):
+    object_id: int
+    token: str
